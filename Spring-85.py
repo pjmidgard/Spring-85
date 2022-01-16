@@ -257,8 +257,8 @@ class compression:
                                     nameas=name+".bin" 
                                     
                                     bit=""
-
-                                    e=((2**Deep2)-1)+(2**Deep)-1
+                                    De=e+((2**Deep2)-1)+(2**Deep)-1
+                                    e=De
                                     g=0
                                     f=0
                                     T6=0
@@ -280,10 +280,7 @@ class compression:
                                                 f=1
                                        
                                     if  g>(2**Deep)-1:
-	                                   
-    
-	                                    e=((2**Deep2)-1)+(2**Deep)-1
-	                                    
+	                                    e=De
 	                                    g=0
 	                                    f=0
 	                                    T6=0
@@ -342,7 +339,7 @@ class compression:
                               
                                     
                                     lenfS=len(sda17)
-                                    print(lenfS)
+                                    #print(lenfS)
 
                                     if ccc==2 and Circle_times2==0:
                                                     sda3=sda3[1:]
@@ -515,8 +512,9 @@ class compression:
                                                 T7 = int(sda3, 2)
                                                 T8 = int(sda4, 2)
                                                 T9 = int(sda5, 2)
-                                                e=(2**Deep5)-1
-                                                j=e+T8
+                                                De=e+((2**Deep2)-1)+(2**Deep)-1
+                                                e=De
+                                                j=e-T8
                                                 T7=T7*j
                                                 T7=T7+T9
                                        
