@@ -258,7 +258,7 @@ class compression:
                                     
                                     bit=""
                                     e=0
-                                    De=(e+((2**Deep2)-1)+(2**Deep)-1)*100
+                                    De=(e+((2**Deep2)-1)+(2**Deep)-1)
                                     e=De
                                     g=0
                                     f=0
@@ -275,12 +275,12 @@ class compression:
                                                 
                                                 g=g+1
                                           
-                                        if g>(2**Deep)-1:
+                                        if g>(2**(Deep+1))-1:
                                                 bit="1"
                                                 T7=T7-1
                                                 f=1
                                        
-                                    if  g>(2**Deep)-1:
+                                    if  g>(2**(Deep+1))-1:
 	                                    e=De
 	                                    g=0
 	                                    f=0
@@ -297,7 +297,7 @@ class compression:
 	                                                
 	                                                g=g+1
 	                                                
-	                                        if g>(2**Deep)-1:
+	                                        if g>(2**(Deep+1))-1:
 	                                                ccc=2
 	                                                bit=""
 	                                                
@@ -314,11 +314,11 @@ class compression:
                                     if ccc==1:
                                     	                          
                                             sda23=bin(g)[2:]
-                                            hr=Deep
+                                            hr=Deep+1
                                             
                                         	
                                             lenf=len(sda23)
-                                            if lenf>Deep:
+                                            if lenf>Deep+1:
                                             	ccc=2
 
                                             if ccc==1:
@@ -340,7 +340,7 @@ class compression:
                               
                                     
                                     lenfS=len(sda17)
-                                    print(lenfS)
+                                    #print(lenfS)
 
                                     if ccc==2 and Circle_times2==0:
                                                     sda3=sda3[1:]
@@ -485,7 +485,7 @@ class compression:
                                                 sda10=sda3[0:16]
                                                 Deep5 = int(sda10, 2)
                                                 Deep5=Deep5+2
-                                                Deep4=Deep5-1
+                                                Deep4=Deep5
                                                 sda3=sda3[16:]
                                                 lenf6=len(sda3)
                                                 Deep7=Deep5-2
@@ -515,7 +515,7 @@ class compression:
                                                 T9 = int(sda5, 2)
                                                 e=0
                                                 
-                                                De=(e+((2**Deep2)-1)+(2**Deep)-1)*100
+                                                De=(e+((2**Deep5)-1)+(2**Deep7)-1)
                                                 e=De
                                                 j=e-T8
                                                 T7=T7*j
@@ -565,7 +565,7 @@ class compression:
  
                                             	sda17=bin(T7)[3:]
                                             	lenf14=len(sda17)
-                                            	print(lenf14)
+                                            	#print(lenf14)
                                             	lenf16=lenf14%8
                                             	if lenf16!=0 or lenf14>=((2**40)-1)*8 or Corrupted==1:
 
