@@ -275,12 +275,12 @@ class compression:
                                                 
                                                 g=g+1
                                           
-                                        if g>(2**(Deep+1))-1:
+                                        if g>(2**(Deep))-1:
                                                 bit="1"
                                                 T7=T7-1
                                                 f=1
                                        
-                                    if  g>(2**(Deep+1))-1:
+                                    if  g>(2**(Deep))-1:
 	                                    e=De
 	                                    g=0
 	                                    f=0
@@ -297,7 +297,7 @@ class compression:
 	                                                
 	                                                g=g+1
 	                                                
-	                                        if g>(2**(Deep+1))-1:
+	                                        if g>(2**(Deep))-1:
 	                                                ccc=2
 	                                                bit=""
 	                                                
@@ -314,11 +314,11 @@ class compression:
                                     if ccc==1:
                                     	                          
                                             sda23=bin(g)[2:]
-                                            hr=Deep+1
+                                            hr=Deep
                                             
                                         	
                                             lenf=len(sda23)
-                                            if lenf>Deep+1:
+                                            if lenf>Deep:
                                             	ccc=2
 
                                             if ccc==1:
@@ -485,7 +485,7 @@ class compression:
                                                 sda10=sda3[0:16]
                                                 Deep5 = int(sda10, 2)
                                                 Deep5=Deep5+2
-                                                Deep4=Deep5
+                                                Deep4=Deep5-1
                                                 sda3=sda3[16:]
                                                 lenf6=len(sda3)
                                                 Deep7=Deep5-2
